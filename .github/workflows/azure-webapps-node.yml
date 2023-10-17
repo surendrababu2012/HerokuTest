@@ -23,7 +23,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: proog8020-nodejs    # set this to your application's name
+  AZURE_WEBAPP_NAME: prog8020-nodejs    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '18.x'                # set this to the node version to use
 
@@ -35,6 +35,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        allow-no-subscriptions: true
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
