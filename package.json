@@ -4,6 +4,7 @@
   "description": "This is a chance to test es6 with node 9.3",
   "main": "index.js",
   "scripts": {
+    "CI":"false1",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "node index.js"
