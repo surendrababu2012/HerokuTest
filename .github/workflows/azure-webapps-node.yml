@@ -74,6 +74,8 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         allow-no-subscriptions: true
+        enable-AzPSSession: true
+
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
