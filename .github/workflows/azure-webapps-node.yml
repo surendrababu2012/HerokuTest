@@ -69,13 +69,13 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: node-app
+        
 
     - uses: azure/login@v1
+      name: Azure_action
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        allow-no-subscriptions: true
-        enable-AzPSSession: true
-
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+    
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
